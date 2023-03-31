@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
+import { M6Module } from './maps/m6/m6.module';
 import * as Sentry from "@sentry/angular";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,16 +28,6 @@ import { InfobarComponent } from './templates/talking-heads/infobar/infobar.comp
 import { MainPageComponent } from './main-page/main-page.component';
 import { TimelineMapComponent } from './templates/timeline/timeline-map/timeline-map.component';
 import { TalkingHeadsMapComponent } from './templates/talking-heads/talking-heads-map/talking-heads-map.component';
-import { M6Component } from './maps/m6/m6.component';
-import { SeclayoutComponent } from './maps/m6/seclayout/m6.seclayout.component';
-import { PrevDirective } from './maps/m6/directives/m6.prev.directive';
-import { NextDirective } from './maps/m6/directives/m6.next.directive';
-import { SynchDirective } from './maps/m6/directives/m6.synch.directive';
-import { PaginationDirective } from './maps/m6/directives/m6.pagination.directive';
-import { InfoComponent } from './maps/m6/info/m6.info.component';
-import { ArrowpreDirective } from './maps/m6/directives/m6.arrowpre.directive';
-import { ArrownextDirective } from './maps/m6/directives/m6.arrownext.directive';
-import { ShortcutDirective } from './maps/m6/directives/m6.shortcut.directive';
 
 @NgModule({
   declarations: [
@@ -62,21 +53,12 @@ import { ShortcutDirective } from './maps/m6/directives/m6.shortcut.directive';
     MainPageComponent,
     TimelineMapComponent,
     TalkingHeadsMapComponent,
-    PrevDirective,
-    NextDirective,
-    M6Component,
-    SeclayoutComponent,
-    SynchDirective,
-    PaginationDirective,
-    InfoComponent,
-    ArrowpreDirective,
-    ArrownextDirective,
-    ShortcutDirective,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    M6Module,
   ],
   providers: [
     {
