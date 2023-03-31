@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
-import { M6Module } from './maps/m6/m6.module';
 import * as Sentry from "@sentry/angular";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,7 +57,6 @@ import { TalkingHeadsMapComponent } from './templates/talking-heads/talking-head
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    M6Module,
   ],
   providers: [
     {
