@@ -1,0 +1,681 @@
+/*// out: styles.css, sourcemap: true, compress: true*/
+/* VARIABLES */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+}
+.font-italic {
+  font-style: italic;
+}
+.font-title {
+  font-weight: 700;
+}
+.font-thin {
+  font-weight: 300;
+}
+.paragraph-space-bottom {
+  padding-bottom: 1.5em;
+}
+/*
+.overlays-wrapper{
+  display: flex;
+  height:100%;
+  width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+*/
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  outline: none;
+}
+/***********/
+/* MARKERS */
+/***********/
+.photo-marker {
+  opacity: 0.85;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.photo-marker-animated {
+  animation-name: neopulse;
+  animation-iteration-count: infinite;
+}
+@keyframes neopulse {
+  from {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+@keyframes neopulseHalos {
+  from {
+    width: 2000%;
+    height: 2000%;
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    filter: blur(1px);
+  }
+  to {
+    width: 2000%;
+    height: 2000%;
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+.video-marker {
+  cursor: pointer;
+  opacity: 0.75;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.video-marker:hover {
+  opacity: 1 !important;
+}
+.dot {
+  cursor: pointer;
+  height: 9.5px !important;
+  width: 9.5px !important;
+  background-color: #fff000;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.75;
+  -webkit-transition: transform 0.8s ease-in-out, opacity 0.3s ease-in-out;
+  -moz-transition: transform 0.8s ease-in-out, opacity 0.3s ease-in-out;
+  -o-transition: transform 0.8s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform 0.8s ease-in-out, opacity 0.3s ease-in-out;
+}
+.dot:hover {
+  background-color: #fff000 !important;
+  opacity: 1 !important;
+}
+.dot-next {
+  background-color: red;
+}
+.dot-glow {
+  opacity: 0;
+  border-radius: 50%;
+  -webkit-transition: opacity 0.75s ease-in-out;
+  -moz-transition: opacity 0.75s ease-in-out;
+  -ms-transition: opacity 0.75s ease-in-out;
+  -o-transition: opacity 0.75s ease-in-out;
+  transition: opacity 0.75s ease-in-out;
+  -moz-animation: pulsate 6s ease-in-out infinite;
+  -webkit-animation: pulsate 6s ease-in-out infinite;
+  animation: pulsate 6s ease-in-out infinite;
+}
+.dot-halo {
+  animation-name: neopulseHalos;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff000;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(1px);
+  pointer-events: none;
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 10px #fff000;
+  }
+  50% {
+    transform: scale(5);
+    box-shadow: 0 0 40px 20px #fff000;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 10px #fff000;
+  }
+}
+.square {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  z-index: 5;
+}
+.square:hover .square-span {
+  opacity: 1;
+  width: 50%;
+  height: 50%;
+}
+.photo-marker-visited {
+  width: 25px !important;
+  height: 25px !important;
+  opacity: 0.75 !important;
+}
+/*
+.square-visited{
+  transform: scale(0.7);
+  //height: 5px !important;
+  //width: 5px !important;
+  //opacity: 0.5;
+  z-index: 2 !important;
+  .square-span{
+    background-color: transparent;
+    border: 2.0px solid @color-stelios;
+  }
+}
+*/
+.square-span {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  border-radius: 50%;
+  background-color: #FFFFF0;
+  width: 20%;
+  height: 20%;
+  display: block;
+  margin: auto;
+  opacity: 0.75;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+.audio-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/**********************/
+/* LIGHTBOX - GALLERY */
+/**********************/
+.cy-lightbox {
+  height: 100%;
+}
+.cy-lightbox-thumbs {
+  position: relative;
+  height: 100%;
+  /*padding:40px 40px;*/
+  /*width:320px;*/
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+#gallery-type-video-0 {
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#gallery-type1-nothumb {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* no scrollbar */
+.gallery-type2-thumb,
+.info-box {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.gallery-type2-thumb::-webkit-scrollbar,
+.info-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.gallery-type2-thumb::-webkit-scrollbar-thumb,
+.info-box::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.gallery-type2-thumb::-webkit-scrollbar-track,
+.info-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.gallery-type2-thumb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+  overflow: scroll;
+}
+.gallery-type2-thumb a {
+  flex-basis: calc(16.65% - 20px);
+  margin: 10px;
+}
+.gallery-type2-thumb a:last-child {
+  margin-bottom: 50px;
+}
+.gallery-type2-thumb a img {
+  max-width: 100%;
+  height: auto;
+}
+/**********/
+/* FOOTER */
+/**********/
+.footer-icons-wrapper {
+  position: absolute;
+  bottom: 14px;
+  right: 39px;
+  height: 25px;
+  display: flex;
+  filter: drop-shadow(2px 2px 7px #1e1e1e);
+}
+.footer-icon-thumbs,
+.footer-icon-info,
+.footer-icon-audio,
+.footer-icon-atlas {
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: none;
+  border-radius: 3px;
+}
+.footer-icon-enabled-background {
+  background-color: #030316 !important;
+}
+.footer-icon-thumbs {
+  background-image: url('../assets-cyprus-map/icons//marker-gallery-off.png');
+}
+.footer-icon-thumbs-active {
+  background-image: url('../assets-cyprus-map/icons//marker-gallery-on.png');
+}
+.footer-icon-info {
+  background-image: url('../assets-cyprus-map/icons//marker-info-off.png');
+}
+.footer-icon-info-active {
+  background-image: url('../assets-cyprus-map/icons//marker-info-on.png');
+}
+.footer-icon-audio {
+  background-image: url('../assets-cyprus-map/icons//marker-audio-off.png');
+}
+.footer-icon-audio-active {
+  background-image: url('../assets-cyprus-map/icons//marker-audio-on.png');
+}
+.footer-icon-atlas {
+  background-image: url('../assets-cyprus-map/icons//marker-atlas.png');
+}
+/* TOOLTIP */
+.tooltiptext {
+  opacity: 0;
+  width: 120px;
+  background-color: transparent;
+  text-align: right;
+  padding: 2px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  right: 155px;
+  bottom: 0px;
+  font-size: 0.8em;
+  color: #6A7E7F;
+}
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+.tooltiptext {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+/********/
+/* INFO */
+/********/
+#info-wrapper {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0;
+}
+.info-box {
+  display: none;
+  max-height: calc(100% - 120px);
+  pointer-events: auto;
+  font-size: 0.85em;
+  color: white;
+  width: 33%;
+  padding-right: 24px;
+  padding-left: 24px;
+  overflow: scroll;
+  filter: drop-shadow(0px 0px 1px #000000);
+}
+.info-box a {
+  text-decoration: underline;
+}
+.info-footer {
+  display: none;
+  font-size: 0.7em;
+  position: absolute;
+  padding-left: 24px;
+  padding-bottom: 14px;
+  left: 0;
+  bottom: 0;
+  color: white;
+}
+/*************/
+/* SUBTITLES */
+/*************/
+#subtitles-wrapper {
+  pointer-events: none;
+  height: 100%;
+  width: calc(100% - 2* 24px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 24px;
+  position: absolute;
+  top: 0;
+  z-index: 8;
+}
+.subtitles-exit,
+.subtitles-box,
+.subtitles-footer,
+#info-wrapper,
+.info-box {
+  -webkit-transition: opacity 0.75s ease-in-out;
+  -moz-transition: opacity 0.75s ease-in-out;
+  -ms-transition: opacity 0.75s ease-in-out;
+  -o-transition: opacity 0.75s ease-in-out;
+  transition: opacity 0.75s ease-in-out;
+}
+.subtitles-exit {
+  opacity: 0;
+  margin-left: -8px;
+}
+.subtitles-box {
+  opacity: 0;
+  /*pointer-events: none;*/
+  font-size: 0.85em;
+  /*text-align: center;*/
+  color: #fff000;
+  /*margin:0 auto;*/
+  width: 100%;
+  padding-left: 0;
+  /*z-index: 10;*/
+  /*
+  overflow: scroll;
+  ` pointer-events: auto;
+  */
+  position: relative;
+}
+.subtitles-box-mask {
+  min-height: 0;
+  /* or some value */
+  overflow: hidden;
+}
+.subtitles-footer {
+  opacity: 0;
+  pointer-events: auto;
+  font-size: 0.7em;
+  /*text-align: center;*/
+  color: #fff000;
+  padding-left: 0;
+  padding-bottom: 14px;
+  /*z-index: 10;*/
+}
+.subtitles-footer a {
+  color: #fff000;
+}
+.subtitles-icon {
+  pointer-events: auto;
+  fill: #fff000;
+  padding-top: 14px;
+}
+/************/
+/* NOT USED */
+/************/
+.overflow {
+  color: magenta;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+/*
+.scrolling-text{
+  height:100%;
+  -moz-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+}
+*/
+/* SCROLLING SUBTITLES */
+.scrolling-text {
+  /* scrolling */
+  /* animation properties */
+  -moz-animation: my-animation 10s linear;
+  /* infinite;*/
+  -webkit-animation: my-animation 10s linear;
+  /* infinite;*/
+  animation: my-animation 10s linear;
+  /* infinite;*/
+}
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from {
+    -moz-transform: translateY(0px);
+  }
+  to {
+    -moz-transform: translateY(-73px);
+  }
+}
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-73px);
+  }
+}
+@keyframes my-animation {
+  from {
+    -moz-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  to {
+    -moz-transform: translateY(-73px);
+    -webkit-transform: translateY(-73px);
+    transform: translateY(-73px);
+  }
+}
+/****************/
+/* MAPBOX EDITS */
+/****************/
+.mapboxgl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.mapboxgl-ctrl {
+  font-size: 0.8em;
+  /*
+  button:not(:disabled):hover{
+  background-color:@color-dark-background;
+}
+*/
+}
+.mapboxgl-ctrl button.mapboxgl-ctrl-fullscreen {
+  background-color: none;
+  border-radius: 3px !important;
+  filter: drop-shadow(2px 2px 7px #1e1e1e);
+}
+.mapboxgl-ctrl button.mapboxgl-ctrl-fullscreen .mapboxgl-ctrl-icon {
+  background-image: url('../assets-cyprus-map/icons//marker-fullscreen-enter.png');
+  background-size: contain;
+  filter: drop-shadow(2px 2px 7px #1e1e1e);
+}
+.mapboxgl-ctrl button.mapboxgl-ctrl-shrink {
+  background-color: none;
+  border-radius: 3px !important;
+  filter: drop-shadow(2px 2px 7px #1e1e1e);
+}
+.mapboxgl-ctrl button.mapboxgl-ctrl-shrink .mapboxgl-ctrl-icon {
+  background-image: url('../assets-cyprus-map/icons//marker-fullscreen-exit.png');
+  background-size: contain;
+  filter: drop-shadow(2px 2px 7px #1e1e1e);
+}
+.mapboxgl-ctrl-top-right {
+  top: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  margin: 0px 14px 14px 0px;
+}
+.mapboxgl-ctrl-group {
+  border-radius: 0px;
+  background: none;
+}
+.mapboxgl-ctrl-group button {
+  background: none;
+  width: 25px;
+  height: 25px;
+}
+.mapboxgl-ctrl-group button:hover {
+  background: none;
+}
+.mapboxgl-ctrl-group:not(:empty) {
+  box-shadow: none !important;
+}
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display: none;
+  background: none;
+  color: white;
+  opacity: 0.5;
+}
+.mapboxgl-ctrl-attrib-inner a {
+  color: white;
+}
+a.mapboxgl-ctrl-logo {
+  display: none;
+}
+/**************/
+/* PHOTOSWIPE */
+/**************/
+.pswp__bg {
+  background: none !important;
+}
+.pswp {
+  --pswp-placeholder-bg: none !important;
+}
+.pswp-gallery {
+  color: white;
+  font-weight: bold;
+}
+.hidden-caption-content {
+  display: none;
+}
+.pswp__counter {
+  margin: 15px 0 0 45px !important;
+}
+.pswp.pswp--open.pswp--has_mouse.pswp--zoom-allowed.pswp--click-to-zoom.pswp--one-slide.pswp--ui-visible {
+  z-index: 1;
+}
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: none !important;
+}
+.pswp__icn {
+  fill: #FFFFF0 !important;
+}
+.pswp__icn-shadow {
+  stroke: none !important;
+}
+.pswp__button--close svg {
+  filter: drop-shadow(0px 0px 5px #000000);
+}
+/* IMAGE CAPTION */
+.pswp__custom-caption {
+  text-align: center;
+  opacity: 0.75 !important;
+  text-shadow: 0px 0px 3px #000000;
+  font-size: 0.8em;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+.pswp__custom-caption a {
+  color: #fff;
+  text-decoration: underline;
+}
+.pswp-hidden-caption-content {
+  display: none;
+}
+/* END IMAGE CAPTION */
+@media only screen and (max-width: 767px) {
+  /* CSS rules for mobile screens go here */
+  .gallery-type2-thumb a {
+    flex-basis: calc(33.3% - 20px);
+    margin: 10px;
+  }
+  .info-box {
+    width: calc(100% - 2* 24px);
+    max-height: calc(100% - 100px);
+    top: 30px;
+    position: absolute;
+  }
+  .pswp__custom-caption {
+    width: calc(100% - 80px);
+    top: 18px;
+    bottom: auto;
+    font-size: 0.7em;
+  }
+  .subtitles-box {
+    font-size: 0.8em;
+  }
+  .tooltiptext {
+    opacity: 0;
+  }
+  .tooltip:hover .tooltiptext {
+    opacity: 0;
+  }
+}
