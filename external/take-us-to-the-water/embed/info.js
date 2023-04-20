@@ -4,7 +4,8 @@ function info_title_ENG(){
   text +="Goethe-Institut Cyprus<br>";
   text +="Artworks by Stelios Kallinikou, Korallia Stergides<br>";
   text +="Curated by Evagoras Vanezis<br>";
-  text +="Design and Development by Demetris Shammas";
+  text +="Design and Development by Demetris Shammas<br>";
+  text +="Poem translation: Senem Gökel";  
   text +="</p>";
   return text;
 }
@@ -48,7 +49,8 @@ function info_title_GR(){
   text +="Ινστιτούτο Γκαίτε Κύπρου<br>";
   text +="Με έργα των Στέλιου Καλλινίκου, Κοραλλίας Στεργίδη<br>";
   text +="Επιμέλεια: Ευαγόρας Βανέζης<br>";
-  text +="Σχεδιασμός και προγραμματισμός: Δημήτρης Σιαμμάς";
+  text +="Σχεδιασμός και προγραμματισμός: Δημήτρης Σιαμμάς<br>";
+  text +="Μετάφραση Ποιήματος: Senem Gökel";
   text +="</p>";
   return text;
 }
@@ -93,7 +95,8 @@ function info_title_TR(){
   text +="Goethe-Institut Kıbrıs<br>";
   text +="Eserler: Stelios Kallinikou, Korallia Stergides<br>";
   text +="Küratör: Evagoras Vanezis<br>";
-  text +="Tasarım ve Geliştirme: Demetris Shammas";
+  text +="Tasarım ve Geliştirme: Demetris Shammas<br>";
+  text +="Çeviri: Senem Gökel";
   text +="</p>";
   return text;
 }
